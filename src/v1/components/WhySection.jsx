@@ -1,0 +1,5 @@
+import { ArrowRight } from 'lucide-react'
+
+export default function WhySection({ scrollTo, whyItems }) {
+  return <section className="why-section" id="approach"><div className="why-copy"><div className="eyebrow">WHY ADHROGA</div><h2>Real Estate Investing,<br/>Without the Complexity.</h2><p>We combine real estate expertise, rigorous due diligence and transparent processes to bring high-quality investment opportunities to more investors across India.</p><button className="btn btn-outline" onClick={() => scrollTo('about')}>Our Approach <ArrowRight size={14}/></button></div><div className="why-grid">{whyItems.map(({ icon: Icon, title, text }) => <article key={title} className="why-item"><div className="icon-container"><Icon size={48}/></div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+}
