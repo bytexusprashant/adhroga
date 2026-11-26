@@ -161,32 +161,6 @@ const whyItems = [
     text: "Dedicated support throughout the journey.",
   },
 ];
-const faqs = [
-  [
-    "What is Adhroga?",
-    "Adhroga is a real estate investment platform that helps investors discover curated property opportunities with clear project information.",
-  ],
-  [
-    "How does Adhroga select projects?",
-    "Projects are reviewed for developer credibility, documentation, asset details and relevant due-diligence criteria before being presented.",
-  ],
-  [
-    "Who can invest through Adhroga?",
-    "Eligible individual and institutional investors can explore opportunities, subject to each project’s terms and applicable regulations.",
-  ],
-  [
-    "What information is available before investing?",
-    "Project details, location, documentation, investment structure, timelines and other available disclosures are provided for review.",
-  ],
-  [
-    "How does the investment process work?",
-    "Discover an opportunity, review its information, complete the required checks and follow the project-specific investment process.",
-  ],
-  [
-    "How can I track my investment?",
-    "Investors can receive project updates and relevant progress information through the platform’s investor communication process.",
-  ],
-];
 
 export default function PageV1() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -194,7 +168,6 @@ export default function PageV1() {
   const [type, setType] = useState("All Types");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("Recently Added");
-  const [activeFaq, setActiveFaq] = useState(-1);
   const [language, setLanguage] = useState("English");
   const [mapMode, setMapMode] = useState("Map");
   const [zoom, setZoom] = useState(1);
@@ -280,13 +253,7 @@ export default function PageV1() {
         <ProcessSection process={process} />
         <WhySection scrollTo={scrollTo} whyItems={whyItems} />
         <ValueStripSection />
-        <FaqSection
-          activeFaq={activeFaq}
-          faqs={faqs}
-          language={language}
-          setActiveFaq={setActiveFaq}
-          setLanguage={setLanguage}
-        />
+        <FaqSection language={language} setLanguage={setLanguage} />
         <ClosingCtaSection Placeholder={Placeholder} scrollTo={scrollTo} />
       </main>
       <footer className="footer" id="about">
